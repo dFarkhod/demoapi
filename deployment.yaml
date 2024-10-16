@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consolsysdemoapi
+  namespace: demo
+spec:
+  selector:
+    matchLabels:
+      run: consolsysdemoapi
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: consolsysdemoapi
+    spec:
+      containers:
+      - name: consolsysdemoapi
+        image: farkhod/demoapi:1.0.28
+        ports:
+        - containerPort: 80
+        env:
+        - name: ASPNETCORE_HTTPS_PORT
+          value: "80"  # Ensure this is a string by using quotes
