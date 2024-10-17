@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: consolsysdemoapi
-        image: farkhod/demoapi:1.0.31
+        image: farkhod/demoapi:1.0.32
         ports:
         - containerPort: 80
         env:
